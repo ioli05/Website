@@ -24,10 +24,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-3 text-sm">Navigare</h3>
             <ul className="space-y-1.5">
-              {['Acasa', 'Servicii', 'Echipa', 'Programare'].map((item) => (
+              {['Acasă', 'Servicii', 'Echipă', 'Programare'].map((item) => (
                 <li key={item}>
                   <Link
-                    href={item === 'Acasa' ? '/' : `/${item.toLowerCase()}`}
+                    href={item === 'Acasă' ? '/' : `/${item.toLowerCase()}`}
                     className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)] transition-colors"
                   >
                     {item}

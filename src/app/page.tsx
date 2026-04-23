@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Activity, Heart, Bone, Stethoscope, Microscope, CheckCircle, Loader2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Activity, Heart, Bone, Stethoscope, Microscope, CheckCircle, Loader2, ChevronLeft, ChevronRight, ScanFace, Syringe, } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -20,7 +20,8 @@ const specialties = [
   { icon: Activity, name: 'Reumatologie', desc: 'Boli reumatice' },
   { icon: Heart, name: 'Cardiologie', desc: 'Inimă și vasele' },
   { icon: Microscope, name: 'Radiologie', desc: 'Investigații imagistice' },
-  { icon: Stethoscope, name: 'Medicină internă', desc: 'Diagnostic general' },
+  { icon: ScanFace, name: 'Dermatologie', desc: '' },
+  { icon: Syringe, name: 'Chirurgie plastică', desc: '' },
 ];
 
 const teamMembers = [
@@ -31,7 +32,7 @@ const teamMembers = [
   { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'photo-1537368910025-700350fe46c7' },
   { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'photo-1573496359142-b8d87734a5a2' },
   { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'photo-1622253692010-333f2da6031d' },
-  { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Medicină Internă', image: 'photo-1551836022-d5d88e9218df' },
+  { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'photo-1551836022-d5d88e9218df' },
   { name: 'Dr. Radu Andreea', specialty: 'Medic Specialist Ortopedie', image: 'photo-1651008376811-b8ba0a741357' },
   { name: 'Dr. Popa Cristian', specialty: 'Medic Primar Radiologie', image: 'photo-1611605698335-8b1569810432' },
   { name: 'Dr. Gheorghe Mihai', specialty: 'Medic specialist Cardiologie', image: 'photo-1582750433449-648ed127bb54' },
@@ -43,7 +44,7 @@ const specialtyOptions = [
   'Radiologie',
   'Reumatologie',
   'Chirurgie Plastică',
-  'Medicină Internă',
+  'Dermatologie',
 ];
 
 // Calculăm slide-urile pentru carousel
@@ -71,6 +72,34 @@ function useIsTablet() {
   return isTablet;
 }
 
+function useDeviceType() {
+  const [device, setDevice] = useState("mobile");
+
+  useEffect(() => {
+    function update() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const isLandscape = width > height;
+
+      if (width >= 1024) {
+        setDevice("desktop");
+      } else if (width >= 768) {
+        // telefon landscape vs tabletă
+        setDevice(isLandscape ? "mobile-landscape" : "tablet");
+      } else {
+        setDevice("mobile");
+      }
+    }
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return device;
+}
+
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -87,6 +116,7 @@ export default function HomePage() {
   const perView = isTablet ? 2 : 5;
   const slides = useMemo(() => getSlidesData(teamMembers, perView), [perView]);
   const totalSlides = slides.length;
+  const device = useDeviceType();
 
   // Reset slide când se schimbă viewport-ul
   useEffect(() => {
@@ -207,8 +237,8 @@ export default function HomePage() {
         </div>
 
 
-          {/* Desktop: 5 in row */}
-          <div className="hidden md:grid md:grid-cols-5 gap-4 lg:gap-6">
+          {/* Desktop: 6 in row */}
+          <div className="hidden md:grid md:grid-cols-6 gap-4 lg:gap-6">
           {specialties.map((specialty) => (
             <div
               key={specialty.name}
@@ -220,9 +250,6 @@ export default function HomePage() {
               <h3 className="font-semibold text-sm text-[oklch(0.25_0.02_260)]">
                 {specialty.name}
               </h3>
-              <p className="text-xs text-[oklch(0.45_0.05_260)] mt-1">
-                {specialty.desc}
-              </p>
             </div>
           ))}
         </div>
@@ -255,27 +282,41 @@ export default function HomePage() {
           </div>
 
           {/* Third row */}
-          <div className="flex justify-center mt-4">
-            <div className="flex flex-col items-center text-center p-2 w-1/3">
-              <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mb-2">
-                <Stethoscope className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
+          <div className="flex justify-center gap-4 mt-4">
+            {specialties.slice(5, 6).map((specialty) => (
+              <div key={specialty.name} className="flex flex-col items-center text-center p-2 w-1/3">
+                <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mb-2">
+                  <specialty.icon className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
+                </div>
+                <h3 className="font-medium text-xs text-[oklch(0.25_0.02_260)]">{specialty.name}</h3>
               </div>
-              <h3 className="font-medium text-xs text-[oklch(0.25_0.02_260)]">{specialties[4].name}</h3>
-            </div>
+            ))}
           </div>
         </div>
 
 
           {/* Link */}
-          <div className="mt-6 flex justify-end">
-            <Link
-              href="#servicii"
-              className="inline-flex items-center text-[oklch(0.45_0.15_250)] font-medium hover:text-[oklch(0.40_0.15_250)] transition-colors"
-            >
-              Consultă toate serviciile
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </div>
+         {/* BUTTON RIGHT */}
+              <div className="flex justify-center lg:justify-end">
+                <Link
+                  href="/servicii"
+                  className="
+                    inline-flex 
+                    h-12 
+                    items-center 
+                    justify-center 
+                    text-sm 
+                    font-medium 
+                    text-[oklch(0.45_0.15_250)] 
+                    hover:text-[oklch(0.35_0.15_250)] 
+                    transition-colors
+                  "
+                >
+                  Consultă toate serviciile
+                  <ArrowRight className="ml-2 h-4 w-4 transition-colors" />
+                </Link>
+              </div>
+
 
         </div>
       </section>
@@ -387,7 +428,7 @@ export default function HomePage() {
 
       {/* Team Carousel Section */}
       <section id="echipa" className="py-16 bg-white shadow-[0_4px_30px_rgba(0,0,0,0.08)]">
-
+       
         <div className="w-full max-w-7xl mx-auto px-4">
 
           {/* Title */}
@@ -407,7 +448,17 @@ export default function HomePage() {
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${currentSlide * (100 / perView)}%)` }}
+                style={{
+                  transform: `translateX(-${
+                    currentSlide *
+                    (100 /
+                      (device === 'desktop'
+                        ? 5
+                        : device === 'mobile-landscape'
+                        ? 3
+                        : 2))
+                  }%)`
+                }}
               >
                 {slides.map((slide, slideIndex) => (
                   <div key={slideIndex} className="w-full flex-shrink-0">
@@ -415,7 +466,13 @@ export default function HomePage() {
                       {slide.map((member, index) => (
                         <div
                           key={index}
-                          className={`flex-shrink-0 px-4 ${isTablet ? 'w-1/2' : 'w-1/5'}`}
+                          className={`flex-shrink-0 px-4 ${
+                            device === 'desktop'
+                              ? 'w-1/5'
+                              : device === 'mobile-landscape'
+                              ? 'w-1/3'
+                              : 'w-1/2'
+                          }`}
                         >
                           <div className="text-center p-4">
                             <div className="relative h-32 w-32 md:h-40 md:w-40 mx-auto mb-4 rounded-full overflow-hidden bg-[oklch(0.93_0.05_250)]">
@@ -500,7 +557,7 @@ export default function HomePage() {
       {/* Appointment Form Section */}
       <section id="programare" className="py-16 bg-[oklch(0.93_0.05_250)]">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="w-full max-w-7xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
               {/* Image */}
               <div className="hidden lg:block relative">

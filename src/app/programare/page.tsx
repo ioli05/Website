@@ -34,13 +34,33 @@ export default function ProgramarePage() {
     message: '',
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    try {
+      const res = await fetch("/api/send-appointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error("Eroare API:", result.error);
+        alert("A apărut o eroare la trimiterea formularului.");
+      }
+    } catch (err) {
+      console.error("Eroare rețea:", err);
+      alert("Nu s-a putut trimite formularul. Verifică conexiunea.");
+    }
+
     setIsSubmitting(false);
-    setIsSubmitted(true);
   };
+
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));

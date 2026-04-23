@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { Menu, X, Shield, Phone } from 'lucide-react';
 
 const navItems = [
-  { href: '/', label: 'Acasa' },
+  { href: '/', label: 'Acasă' },
   { href: '/servicii', label: 'Servicii' },
-  { href: '/#echipa', label: 'Echipa' },
+  { href: '/#echipa', label: 'Echipă' },
   { href: '/#programare', label: 'Programare' },
 ];
 

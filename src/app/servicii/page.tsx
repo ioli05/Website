@@ -8,6 +8,7 @@ const categories = [
   { id: 'radiologie', name: 'Radiologie' },
   { id: 'reumatologie', name: 'Reumatologie' },
   { id: 'plastica', name: 'Chirurgie Plastică' },
+  { id: 'dermatologie', name: 'Dermatologie' },
 ];
 
 const prices = {
@@ -40,11 +41,18 @@ const prices = {
     { name: 'Fizioterapie', price: '80 RON/sedinta' },
   ],
   plastica: [
-    { name: 'Consultație chirurgie plastica', price: '100 RON' },
+    { name: 'Consultație chirurgie plastică', price: '100 RON' },
     { name: 'Proceduri estetice', price: 'De la 500 RON' },
     { name: 'Tratamente faciale', price: 'De la 300 RON' },
     { name: 'Injectari estetice', price: 'De la 250 RON' },
     { name: 'Consultatie post-operatorie', price: 'Gratuit' },
+  ],
+  dermatologie: [
+    { name: 'Consultație dermatologică', price: '150 RON' },
+    { name: 'Dermatoscopie digitală (analiza alunițelor)', price: '200 RON' },
+    { name: 'Crioterapie', price: '300 RON' },
+    { name: 'Peeling', price: '250 RON' },
+    { name: 'Electrocauterizare leziuni cutanate', price: '150 - 300 RON' },
   ],
 };
 
@@ -57,7 +65,7 @@ export default function ServiciiPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-[oklch(0.45_0.15_250)] mb-4">
             Servicii profesionale adaptate nevoilor tale
           </h1>
-          <p className="text-[oklch(0.45_0.05_260)] max-w-2xl mx-auto">
+          <p className="text-lg text-[oklch(0.45_0.05_260)] max-w-none mx-auto text-center whitespace-nowrap">
             Oferim o gamă completă de servicii medicale pentru a răspunde tuturor nevoilor tale de sănătate.
           </p>
         </div>
@@ -65,84 +73,100 @@ export default function ServiciiPage() {
 
       {/* Process Section */}
       <section className="py-16 bg-[oklch(0.96_0.02_250)]">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl md:text-2xl font-bold text-[oklch(0.25_0.02_260)] mb-10 text-center">
-            Cum functionează procesul nostru
+            Cum funcționează procesul nostru
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-                <Users className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-              </div>
-              <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-                Pasul 1: Consultația de Specialitate
-              </h3>
-              <p className="text-sm text-[oklch(0.45_0.05_260)]">
-                Orice tratament corect începe cu o discuție detaliată. Specialistul
-                analizează istoricul tău medical și simptomele actuale.
-              </p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Step 1 */}
+          <div className="text-center">
+            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
+              <Users className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
             </div>
+            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
+              Pasul 1: Consultația de Specialitate
+            </h3>
+            <p className="text-sm text-[oklch(0.45_0.05_260)]">
+              Orice tratament corect începe cu o discuție detaliată. Specialistul
+              analizează istoricul tău medical și simptomele actuale.
+            </p>
+          </div>
 
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-                <Microscope className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-              </div>
-              <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-                Pasul 2: Diagnostic de Precizie
-              </h3>
-              <p className="text-sm text-[oklch(0.45_0.05_260)]">
-                Folosim tehnologie de ultimă oră pentru imagistică exactă, de la
-                ecografii la radiografii osoase. Acuratețea este prioritatea noastră{' '}
-                <strong>pentru tine</strong>.
-              </p>
+          {/* Step 2 */}
+          <div className="text-center">
+            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
+              <Microscope className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
             </div>
+            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
+              Pasul 2: Diagnostic de Precizie
+            </h3>
+            <p className="text-sm text-[oklch(0.45_0.05_260)]">
+              Folosim tehnologie de ultimă oră pentru imagistică exactă, de la
+              ecografii la radiografii osoase. Acuratețea este prioritatea noastră <strong>pentru tine</strong>.
+            </p>
+          </div>
 
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-                <ClipboardCheck className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-              </div>
-              <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-                Pasul 3: Planul de Tratament
-              </h3>
-              <p className="text-sm text-[oklch(0.45_0.05_260)]">
-                Aplicăm protocoale individualizate, de la infiltrații specifice
-                reumatologiei până la tehnici estetice moderne, pentru rezultate
-                optime și sigure.
-              </p>
+          {/* Step 3 */}
+          <div className="text-center">
+            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
+              <ClipboardCheck className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
             </div>
+            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
+              Pasul 3: Planul de Tratament
+            </h3>
+            <p className="text-sm text-[oklch(0.45_0.05_260)]">
+              Aplicăm protocoale individualizate, de la infiltrații specifice
+              reumatologiei până la tehnici estetice moderne, pentru rezultate
+              optime și sigure.
+            </p>
           </div>
         </div>
-      </section>
 
-      {/* Categories */}
-      <section className="py-8 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                className="px-5 py-2 rounded-full text-sm font-medium bg-[oklch(0.96_0.02_250)] text-[oklch(0.35_0.05_260)] hover:bg-[oklch(0.92_0.03_250)] transition-colors border border-[oklch(0.92_0.02_250)]"
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Prices Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <p className="text-lg font-medium text-[oklch(0.45_0.15_250)] mb-8 text-center max-w-2xl mx-auto">
+      <section className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+
+          <p className="text-lg font-medium text-[oklch(0.45_0.15_250)] mb-8 text-center w-full">
             Am pregătit pentru tine o listă de prețuri pentru cele mai solicitate
             tratamente, grupate pe specialități pentru a-ți fi ușor să găsești ce ai nevoie.
           </p>
 
+          {/* Buttons */}
+          <div
+            className="
+              grid 
+              grid-cols-[repeat(auto-fit,minmax(140px,1fr))] 
+              gap-4
+              mb-12
+            "
+          >
+            {categories.map((cat) => (
+              <a
+                href={`#${cat.id}`}
+                className="
+                  w-full
+                  px-5 py-2 
+                  rounded-full 
+                  text-sm font-medium 
+                  bg-[oklch(0.96_0.02_250)] 
+                  text-[oklch(0.35_0.05_260)] 
+                  hover:bg-[oklch(0.92_0.03_250)] 
+                  transition-colors 
+                  border border-[oklch(0.92_0.02_250)]
+                  text-center
+                  block
+                "
+              >
+                {cat.name}
+              </a>
+            ))}
+          </div>
+
           {/* Ortopedie */}
-          <div className="max-w-3xl mx-auto mb-12">
+          <div id="ortopedie" className="max-w-7xl mx-auto px-4 mt-16">
             <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
               Ortopedie
             </h3>
@@ -157,7 +181,7 @@ export default function ServiciiPage() {
           </div>
 
           {/* Cardiologie */}
-          <div className="max-w-3xl mx-auto mb-12">
+          <div id="cardiologie" className="max-w-7xl mx-auto px-4 mt-16">
             <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
               Cardiologie
             </h3>
@@ -172,7 +196,7 @@ export default function ServiciiPage() {
           </div>
 
           {/* Radiologie */}
-          <div className="max-w-3xl mx-auto mb-12">
+          <div id="radiologie" className="max-w-7xl mx-auto px-4 mt-16">
             <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
               Radiologie
             </h3>
@@ -185,8 +209,55 @@ export default function ServiciiPage() {
               ))}
             </div>
           </div>
+
+        {/* Reumatologie */}
+          <div id="reumatologie" className="max-w-7xl mx-auto px-4 mt-16">
+            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
+              Reumatologie
+            </h3>
+            <div className="space-y-3">
+              {prices.reumatologie.map((item, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
+                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
+                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Chirurgie plastica */}
+          <div id="plastica" className="max-w-7xl mx-auto px-4 mt-16">
+            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
+              Chirurgie plastică
+            </h3>
+            <div className="space-y-3">
+              {prices.plastica.map((item, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
+                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
+                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dermatologie */}
+          <div id="dermatologie" className="max-w-7xl mx-auto px-4 mt-16">
+            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
+              Dermatologie
+            </h3>
+            <div className="space-y-3">
+              {prices.dermatologie.map((item, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
+                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
+                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-16 px-4">
