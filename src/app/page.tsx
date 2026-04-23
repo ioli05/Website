@@ -231,9 +231,10 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-[oklch(0.25_0.02_260)] mb-2">
             Specialități medicale
           </h2>
-          <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto whitespace-nowrap overflow-hidden text-ellipsis hidden md:block">
+          <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto text-center whitespace-normal">
             Oferim o gamă variată de specialități medicale pentru a vă asigura îngrijire completă într-un singur loc.
           </p>
+
         </div>
 
 
@@ -317,7 +318,6 @@ export default function HomePage() {
                 </Link>
               </div>
 
-
         </div>
       </section>
 
@@ -325,12 +325,12 @@ export default function HomePage() {
       {/* Services Preview Section */}
       <section id="servicii" className="relative py-20 overflow-hidden">
 
-        {/* Background rectangle */}
         <div 
           className="
             absolute 
             top-30
-            left-[+5%] 
+            left-0              /* mobil: începe din stânga */
+            md:left-[5%]        /* desktop/tabletă: 5% ca înainte */
             w-[130%] 
             h-[500px] 
             bg-[rgba(37,134,204,0.37)] 
