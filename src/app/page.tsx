@@ -393,7 +393,7 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-[oklch(0.25_0.02_260)] mb-3">
               Echipa noastră
             </h2>
-            <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto whitespace-nowrap overflow-hidden text-ellipsis hidden md:block">
+             <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto text-center whitespace-normal block max-w-[90%] leading-normal">
               O echipă de medici cu expertiză vastă, pregătită să vă ofere îngrijire la cele mai înalte standarde.
             </p>
           </div>

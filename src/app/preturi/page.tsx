@@ -59,10 +59,11 @@ export default function PreturiPage() {
   return (
     <section id="preturi" className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-
-        <p className="text-lg font-medium text-[oklch(0.45_0.15_250)] mb-8 text-center w-full">
-          Am pregătit pentru tine o listă de prețuri pentru cele mai solicitate
-          tratamente, grupate pe specialități pentru a-ți fi ușor să găsești ce ai nevoie.
+        <h2 className="text-3xl md:text-2xl font-bold text-[oklch(0.45_0.15_250)] mb-4 text-center">
+            Am pregătit pentru tine o listă de prețuri pentru cele mai solicitate tratamente, grupate pe specialități.
+        </h2>
+        <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mb-6 mx-auto text-center whitespace-normal block max-w-[90%] leading-normal">
+          Tarifele sunt orientative și pot varia în funcție de evaluarea medicală și de nevoile fiecărui pacient.
         </p>
 
         {/* Buttons */}

@@ -4,29 +4,36 @@ import { Shield, MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-
 export default function Footer() {
   return (
 <footer className="bg-[oklch(0.96_0.02_250)] border-t">
-  <div className="container mx-auto px-4 py-8 md:py-12">
+  <div className="container mx-auto px-4 py-10">
 
-    {/* GRID: 2 coloane pe mobil, 4 pe desktop */}
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+    {/* GRID: 4 coloane pe desktop, 2 pe mobil */}
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
 
       {/* Logo + Info */}
-      <div>
-        <Link href="/" className="flex items-center gap-2 mb-4">
+      <div className="space-y-3">
+        <Link href="/" className="flex items-center gap-2">
           <Shield className="h-8 w-8 text-[oklch(0.45_0.15_250)]" />
-          <div className="flex flex-col leading-none">
-            <span className="font-bold text-[oklch(0.45_0.15_250)] tracking-tight">ORTHO X-RAY</span>
-            <span className="text-[10px] text-[oklch(0.45_0.15_250)] tracking-widest">CLINIC</span>
+          <div className="leading-none">
+            <span className="font-bold text-[oklch(0.45_0.15_250)] tracking-tight">
+              ORTHO X-RAY
+            </span>
+            <span className="block text-[10px] text-[oklch(0.45_0.15_250)] tracking-widest">
+              CLINIC
+            </span>
           </div>
         </Link>
-        <p className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] max-w-xs">
+
+        <p className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] max-w-[180px]">
           Îngrijire medicală profesionistă pentru o viață mai sănătoasă.
         </p>
       </div>
 
       {/* Navigare */}
-      <div>
-        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-3 text-sm">Navigare</h3>
-        <ul className="space-y-1.5">
+      <div className="space-y-3">
+        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] text-sm">
+          Navigare
+        </h3>
+        <ul className="space-y-2">
           {['Acasă', 'Servicii', 'Echipă', 'Programare', 'Preturi'].map((item) => (
             <li key={item}>
               <Link
@@ -41,10 +48,11 @@ export default function Footer() {
       </div>
 
       {/* Contact */}
-      <div>
-        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-3 text-sm">Contact</h3>
-        <ul className="space-y-1.5">
-
+      <div className="space-y-3">
+        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] text-sm">
+          Contact
+        </h3>
+        <ul className="space-y-2">
           <li className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-[oklch(0.45_0.15_250)]" />
             <a href="tel:+40746808721" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
@@ -76,14 +84,15 @@ export default function Footer() {
               L-V: 08:00–19:00
             </span>
           </li>
-
         </ul>
       </div>
 
       {/* Social */}
-      <div>
-        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-3 text-sm">Social</h3>
-        <div className="flex gap-2">
+      <div className="space-y-3">
+        <h3 className="font-semibold text-[oklch(0.25_0.02_260)] text-sm">
+          Social
+        </h3>
+        <div className="flex gap-3">
           <a href="#" className="h-8 w-8 rounded-full bg-[oklch(0.45_0.15_250)] flex items-center justify-center text-white hover:bg-[oklch(0.40_0.15_250)] transition-colors">
             <Facebook className="h-3.5 w-3.5" />
           </a>
@@ -114,6 +123,8 @@ export default function Footer() {
 
   </div>
 </footer>
+
+
 
   );
 }
