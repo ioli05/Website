@@ -27,7 +27,7 @@ export default function Footer() {
       <div>
         <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-3 text-sm">Navigare</h3>
         <ul className="space-y-1.5">
-          {['Acasă', 'Servicii', 'Echipă', 'Programare'].map((item) => (
+          {['Acasă', 'Servicii', 'Echipă', 'Programare', 'Preturi'].map((item) => (
             <li key={item}>
               <Link
                 href={item === 'Acasă' ? '/' : `/${item.toLowerCase()}`}
@@ -47,8 +47,8 @@ export default function Footer() {
 
           <li className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-[oklch(0.45_0.15_250)]" />
-            <a href="tel:+40721234567" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
-              +40 721 234 567
+            <a href="tel:+40746808721" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
+              +40 746 808 721
             </a>
           </li>
 

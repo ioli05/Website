@@ -231,9 +231,10 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-[oklch(0.25_0.02_260)] mb-2">
             Specialități medicale
           </h2>
-          <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto text-center whitespace-normal">
-            Oferim o gamă variată de specialități medicale pentru a vă asigura îngrijire completă într-un singur loc.
-          </p>
+         <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto text-center whitespace-normal block max-w-[90%] leading-normal">
+          Oferim o gamă variată de specialități medicale pentru a vă asigura îngrijire completă într-un singur loc.
+        </p>
+
 
         </div>
 
@@ -296,7 +297,7 @@ export default function HomePage() {
         </div>
 
 
-          {/* Link */}
+        {/* Link */}
          {/* BUTTON RIGHT */}
               <div className="flex justify-center lg:justify-end">
                 <Link
@@ -322,105 +323,61 @@ export default function HomePage() {
       </section>
 
 
-      {/* Services Preview Section */}
-      <section id="servicii" className="relative py-20 overflow-hidden">
+      {/* Clinic Gallery Section */}
+      <section id="servicii" className="py-16 md:py-24 bg-[oklch(0.96_0.02_250)]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-[oklch(0.25_0.02_260)] mb-3">
+              Spații moderne pentru îngrijire medicală de top
+            </h2>
+             <p className="text-sm md:text-base text-[oklch(0.45_0.05_260)] mx-auto text-center whitespace-normal block max-w-[90%] leading-normal">
+              Ne dorim ca fiecare vizită să fie o experiență plăcută, într-un mediu în care confortul și grija pentru pacient sunt pe primul loc.           
+            </p>
+          </div>
 
-        <div 
-          className="
-            absolute 
-            top-30
-            left-0              /* mobil: începe din stânga */
-            md:left-[5%]        /* desktop/tabletă: 5% ca înainte */
-            w-[130%] 
-            h-[500px] 
-            bg-[rgba(37,134,204,0.37)] 
-            -skew-y-2 
-            opacity-90
-          "
-        />
-
-        <div className="relative w-full max-w-7xl mx-auto px-6 z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-            {/* IMAGE */}
-            <div className="relative flex justify-center order-1">
-              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-[3/4]">
-                <Image
-                  src="/images/medic2.webp"
-                  alt="Medic specialist"
-                  fill
-                  className="object-cover rounded-3xl shadow-2xl"
-                />
-              </div>
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {/* Large image - left spanning 2 rows */}
+            <div className="col-span-2 row-span-2 relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=600&fit=crop"
+                alt="Interior clinică"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
             </div>
 
-            {/* TEXT + BOX */}
-            <div className="space-y-10 order-2 text-center lg:text-left">
-
-              <h2 className="text-3xl md:text-4xl font-bold text-[oklch(0.25_0.02_260)] leading-tight">
-                Servicii medicale profesionale și îngrijire de încredere
-              </h2>
-
-              <p className="text-[oklch(0.45_0.05_260)] max-w-xl mx-auto lg:mx-0">
-                Clinica noastră oferă servicii medicale moderne, susținute de o echipă de specialiști
-                cu experiență și rezultate dovedite. Ne dedicăm fiecărui caz în parte, punând accent
-                pe profesionalism, empatie și soluții medicale adaptate nevoilor fiecărui pacient.
-              </p>
-
-              {/* STATS BOX — 3 COLUMNS */}
-              <div className="
-                bg-white/70 
-                backdrop-blur-md 
-                p-6 
-                rounded-2xl 
-                shadow-lg 
-                max-w-md 
-                mx-auto 
-                grid 
-                grid-cols-3 
-                gap-6 
-                text-center
-              ">
-                <div>
-                  <p className="text-3xl font-bold text-[oklch(0.45_0.15_250)]">1000+</p>
-                  <p className="text-xs text-[oklch(0.35_0.03_260)]">Pacienți tratați</p>
-                </div>
-
-                <div>
-                  <p className="text-3xl font-bold text-[oklch(0.45_0.15_250)]">15+</p>
-                  <p className="text-xs text-[oklch(0.35_0.03_260)]">Ani experiență</p>
-                </div>
-
-                <div>
-                  <p className="text-3xl font-bold text-[oklch(0.45_0.15_250)]">5</p>
-                  <p className="text-xs text-[oklch(0.35_0.03_260)]">Specialități</p>
-                </div>
-              </div>
-
-              {/* BUTTON RIGHT */}
-              <div className="flex justify-center lg:justify-end">
-                <Link
-                  href="/servicii"
-                  className="
-                    inline-flex 
-                    h-12 
-                    items-center 
-                    justify-center 
-                    text-sm 
-                    font-medium 
-                    text-[oklch(0.45_0.15_250)] 
-                    hover:text-[oklch(0.35_0.15_250)] 
-                    transition-colors
-                  "
-                >
-                  Consultă toate serviciile
-                  <ArrowRight className="ml-2 h-4 w-4 transition-colors" />
-                </Link>
-              </div>
-
-
+            {/* Top right images */}
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=300&h=300&fit=crop"
+                alt="Sala de consultații"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 25vw, 12.5vw"
+              />
+            </div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=300&fit=crop"
+                alt="Echipamente medicale"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 25vw, 12.5vw"
+              />
             </div>
 
+            {/* Bottom right - spanning 2 cols */}
+            <div className="col-span-2 relative aspect-[2/1] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=300&fit=crop"
+                alt="Laborator clinic"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
           </div>
         </div>
       </section>

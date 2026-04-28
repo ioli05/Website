@@ -73,188 +73,141 @@ export default function ServiciiPage() {
 
       {/* Process Section */}
       <section className="py-16 bg-[oklch(0.96_0.02_250)]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-[oklch(0.25_0.02_260)] mb-10 text-center">
-            Cum funcționează procesul nostru
-          </h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Step 1 */}
-          <div className="text-center">
-            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-              <Users className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-            </div>
-            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-              Pasul 1: Consultația de Specialitate
-            </h3>
-            <p className="text-sm text-[oklch(0.45_0.05_260)]">
-              Orice tratament corect începe cu o discuție detaliată. Specialistul
-              analizează istoricul tău medical și simptomele actuale.
-            </p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="text-center">
-            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-              <Microscope className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-            </div>
-            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-              Pasul 2: Diagnostic de Precizie
-            </h3>
-            <p className="text-sm text-[oklch(0.45_0.05_260)]">
-              Folosim tehnologie de ultimă oră pentru imagistică exactă, de la
-              ecografii la radiografii osoase. Acuratețea este prioritatea noastră <strong>pentru tine</strong>.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="text-center">
-            <div className="h-20 w-20 rounded-full bg-[oklch(0.45_0.15_250)]/10 flex items-center justify-center mx-auto mb-4">
-              <ClipboardCheck className="h-10 w-10 text-[oklch(0.45_0.15_250)]" />
-            </div>
-            <h3 className="font-semibold text-[oklch(0.25_0.02_260)] mb-2">
-              Pasul 3: Planul de Tratament
-            </h3>
-            <p className="text-sm text-[oklch(0.45_0.05_260)]">
-              Aplicăm protocoale individualizate, de la infiltrații specifice
-              reumatologiei până la tehnici estetice moderne, pentru rezultate
-              optime și sigure.
-            </p>
-          </div>
-        </div>
-
-        </div>
-      </section>
-
-      {/* Prices Section */}
-      <section className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-
-          <p className="text-lg font-medium text-[oklch(0.45_0.15_250)] mb-8 text-center w-full">
-            Am pregătit pentru tine o listă de prețuri pentru cele mai solicitate
-            tratamente, grupate pe specialități pentru a-ți fi ușor să găsești ce ai nevoie.
-          </p>
-
-          {/* Buttons */}
-          <div
-            className="
-              grid 
-              grid-cols-[repeat(auto-fit,minmax(140px,1fr))] 
-              gap-4
-              mb-12
-            "
-          >
-            {categories.map((cat) => (
-              <a
-                href={`#${cat.id}`}
-                className="
-                  w-full
-                  px-5 py-2 
-                  rounded-full 
-                  text-sm font-medium 
-                  bg-[oklch(0.96_0.02_250)] 
-                  text-[oklch(0.35_0.05_260)] 
-                  hover:bg-[oklch(0.92_0.03_250)] 
-                  transition-colors 
-                  border border-[oklch(0.92_0.02_250)]
-                  text-center
-                  block
-                "
-              >
-                {cat.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Ortopedie */}
-          <div id="ortopedie" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Ortopedie
-            </h3>
-            <div className="space-y-3">
-              {prices.ortopedie.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto space-y-6">
+            {/* Step 1 */}
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Consultația de Specialitate
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    O discuție deschisă și atentă, în care medicul îți ascultă simptomele, îți înțelege istoricul și îți răspunde la întrebări. Consultația este momentul în care primești claritate, direcție și un plan adaptat nevoilor tale reale, nu o soluție standard.
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Cardiologie */}
-          <div id="cardiologie" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Cardiologie
-            </h3>
-            <div className="space-y-3">
-              {prices.cardiologie.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop"
+                    alt="Consultație medicală"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          {/* Radiologie */}
-          <div id="radiologie" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Radiologie
-            </h3>
-            <div className="space-y-3">
-              {prices.radiologie.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+            {/* Step 2 */}
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Radiografii digitale
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    Investigații rapide și precise, gândite să ofere răspunsuri clare atunci când ai dureri, disconfort sau suspiciuni de leziuni. Radiografiile ne ajută să vedem exact ce se întâmplă în interior, astfel încât tratamentul să fie corect încă de la început.                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-        {/* Reumatologie */}
-          <div id="reumatologie" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Reumatologie
-            </h3>
-            <div className="space-y-3">
-              {prices.reumatologie.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=300&h=200&fit=crop"
+                    alt="Diagnostic de precizie"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          {/* Chirurgie plastica */}
-          <div id="plastica" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Chirurgie plastică
-            </h3>
-            <div className="space-y-3">
-              {prices.plastica.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+            {/* Step 3 */}
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Tratamente regenerative
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    O abordare modernă, orientată spre prevenție și vindecare naturală. Aceste tratamente susțin organismul să repare țesuturile afectate, reduc inflamația și încetinesc evoluția problemelor articulare. Sunt ideale pentru pacienții care își doresc soluții sigure, minim invazive și cu efect pe termen lung.                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dermatologie */}
-          <div id="dermatologie" className="max-w-7xl mx-auto px-4 mt-16">
-            <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
-              Dermatologie
-            </h3>
-            <div className="space-y-3">
-              {prices.dermatologie.map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                  <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                  <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop"
+                    alt="Plan de tratament"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Îngrijire dermatologică
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    Evaluări blânde și tratamente personalizate pentru pielea ta, fie că este vorba despre probleme medicale sau despre dorința de a-ți îmbunătăți aspectul. Scopul este să te simți bine în pielea ta, cu soluții adaptate sensibilității și nevoilor tale.                
+                  </p>  
+                </div>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop"
+                    alt="Plan de tratament"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Evaluare cardiologică
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    Un moment important pentru sănătatea ta generală. Verificăm funcția inimii, ritmul și eventualele riscuri, astfel încât să poți preveni problemele înainte să apară. Este o investiție în liniștea ta pe termen lung.                  </p>  
+                </div>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop"
+                    alt="Plan de tratament"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[oklch(0.92_0.02_250)] p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-xl md:text-2xl text-[oklch(0.25_0.02_260)] mb-2">
+                    Proceduri estetice minim invazive
+                  </h3>
+                  <p className="text-sm text-[oklch(0.45_0.05_260)]">
+                    Intervenții delicate, cu rezultate naturale, pentru pacienții care își doresc o îmbunătățire discretă a aspectului. Scopul nu este schimbarea, ci armonizarea trăsăturilor și redarea încrederii în propria imagine.
+                  </p>
+                </div>
+                <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop"
+                    alt="Plan de tratament"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 192px"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 

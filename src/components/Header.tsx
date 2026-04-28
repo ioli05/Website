@@ -10,6 +10,7 @@ const navItems = [
   { href: '/servicii', label: 'Servicii' },
   { href: '/#echipa', label: 'Echipă' },
   { href: '/#programare', label: 'Programare' },
+  { href: '/preturi', label: 'Prețuri' },
 ];
 
 export default function Header() {

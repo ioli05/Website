@@ -8,7 +8,7 @@ export default function FloatingButtons() {
     <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
       {/* Phone Button */}
       <a
-        href="tel:+40721234567"
+        href="tel:+40746808721"
         className="h-14 w-14 rounded-full bg-[oklch(0.45_0.15_250)] text-white flex items-center justify-center shadow-lg hover:bg-[oklch(0.40_0.15_250)] transition-colors"
         aria-label="Sună acum"
       >
