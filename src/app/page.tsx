@@ -25,17 +25,17 @@ const specialties = [
 ];
 
 const teamMembers = [
-  { name: 'Dr. Zubaci Radu', specialty: 'Medic primar Ortopedie', image: 'photo-1612349317150-e413f6a5b16d' },
-  { name: 'Dr. Nițan Ovidiu', specialty: 'Medic specialist Ortopedie', image: 'photo-1582750433449-648ed127bb54' },
-  { name: 'Dr. Nițan Ionela', specialty: 'Medic Specialist Cardiologie', image: 'photo-1559839734-2b71ea197ec2' },
-  { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'photo-1594824476967-48c8b964273f' },
-  { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'photo-1537368910025-700350fe46c7' },
-  { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'photo-1573496359142-b8d87734a5a2' },
-  { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'photo-1622253692010-333f2da6031d' },
-  { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'photo-1551836022-d5d88e9218df' },
-  { name: 'Dr. Radu Andreea', specialty: 'Medic Specialist Ortopedie', image: 'photo-1651008376811-b8ba0a741357' },
-  { name: 'Dr. Popa Cristian', specialty: 'Medic Primar Radiologie', image: 'photo-1611605698335-8b1569810432' },
-  { name: 'Dr. Gheorghe Mihai', specialty: 'Medic specialist Cardiologie', image: 'photo-1582750433449-648ed127bb54' },
+  { name: 'Dr. Zubaci Radu', specialty: 'Medic primar Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Nițan Ovidiu', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Nițan Ionela', specialty: 'Medic Specialist Cardiologie', image: 'female_icon.png' },
+  { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
+  { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
+  { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'female_icon.png' },
+  { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'female_icon.png' },
+  { name: 'Dr. Radu Andreea', specialty: 'Medic Specialist Ortopedie', image: 'female_icon.png' },
+  { name: 'Dr. Popa Cristian', specialty: 'Medic Primar Radiologie', image: 'male_icon.png' },
+  { name: 'Dr. Gheorghe Mihai', specialty: 'Medic specialist Cardiologie', image: 'male_icon.png' },
 ];
 
 const specialtyOptions = [
@@ -340,7 +340,7 @@ export default function HomePage() {
             {/* Large image - left spanning 2 rows */}
             <div className="col-span-2 row-span-2 relative aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=600&fit=crop"
+                src="/images/clinic.jpeg?w=600&h=600&fit=crop"
                 alt="Interior clinică"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
@@ -351,7 +351,7 @@ export default function HomePage() {
             {/* Top right images */}
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=300&h=300&fit=crop"
+                src="/images/clinic-2.jpeg?w=300&h=300&fit=crop"
                 alt="Sala de consultații"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
@@ -360,7 +360,7 @@ export default function HomePage() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=300&fit=crop"
+                src="/images/clinic-3.jpeg?w=300&h=300&fit=crop"
                 alt="Echipamente medicale"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
@@ -371,7 +371,7 @@ export default function HomePage() {
             {/* Bottom right - spanning 2 cols */}
             <div className="col-span-2 relative aspect-[2/1] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=300&fit=crop"
+                src="/images/clinic-4.jpeg?w=600&h=300&fit=crop"
                 alt="Laborator clinic"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
@@ -434,7 +434,7 @@ export default function HomePage() {
                           <div className="text-center p-4">
                             <div className="relative h-32 w-32 md:h-40 md:w-40 mx-auto mb-4 rounded-full overflow-hidden bg-[oklch(0.93_0.05_250)]">
                               <Image
-                                src={`https://images.unsplash.com/${member.image}?w=200&h=200&fit=crop&crop=face`}
+                                src={`/images/${member.image}?w=200&h=200&fit=crop&crop=face`}
                                 alt={member.name}
                                 fill
                                 sizes={isTablet ? '128px' : '160px'}
@@ -519,7 +519,7 @@ export default function HomePage() {
               {/* Image */}
               <div className="hidden lg:block relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=500&fit=crop"
+                  src="/images/programare.jpeg?w=600&h=500&fit=crop"
                   alt="Planificare consultație"
                   fill
                   className="object-cover rounded-2xl shadow-xl"

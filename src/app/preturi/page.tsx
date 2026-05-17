@@ -194,7 +194,7 @@ export default function PreturiPage() {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-t border-b border-[oklch(0.92_0.02_250)] p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[oklch(0.25_0.02_260)] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[oklch(0.45_0.15_250)] mb-4">
               Programează o consultație
             </h2>
             <p className="text-[oklch(0.45_0.05_260)] max-w-xl mx-auto mb-8">

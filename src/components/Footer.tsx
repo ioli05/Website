@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Shield, MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,18 +11,17 @@ export default function Footer() {
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
 
       {/* Logo + Info */}
-      <div className="space-y-3">
-        <Link href="/" className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-[oklch(0.45_0.15_250)]" />
-          <div className="leading-none">
-            <span className="font-bold text-[oklch(0.45_0.15_250)] tracking-tight">
-              ORTHO X-RAY
-            </span>
-            <span className="block text-[10px] text-[oklch(0.45_0.15_250)] tracking-widest">
-              CLINIC
-            </span>
-          </div>
-        </Link>
+      <div className="space-y-3 items-start flex flex-col">
+        <Link href="/" className="flex items-center">
+            <div className="relative h-10 w-28">
+              <Image
+                src="/images/logo.png"
+                alt="Logo Ortho X-Ray"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
 
         <p className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] max-w-[180px]">
           Îngrijire medicală profesionistă pentru o viață mai sănătoasă.

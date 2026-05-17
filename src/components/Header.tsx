@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X, Shield, Phone } from 'lucide-react';
-
+import Image from "next/image";
 const navItems = [
   { href: '/', label: 'Acasă' },
   { href: '/servicii', label: 'Servicii' },
@@ -21,17 +21,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative h-10 w-10">
-              <Shield className="h-10 w-10 text-[oklch(0.45_0.15_250)] fill-[oklch(0.45_0.15_250)]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-sm" />
-              </div>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-bold text-[oklch(0.45_0.15_250)] tracking-tight text-lg">ORTHO X-RAY</span>
-              <span className="text-xs text-[oklch(0.45_0.15_250)] tracking-widest">CLINIC</span>
+          <Link href="/" className="flex items-center">
+            <div className="relative h-40 w-60">
+              <Image
+                src="/images/logo.png"
+                alt="Logo Ortho X-Ray"
+                fill
+                className="object-contain"
+              />
             </div>
           </Link>
 
