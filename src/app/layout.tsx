@@ -7,7 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { Raleway } from "next/font/google";
- 
+import { Analytics } from "@vercel/analytics/next";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -66,6 +67,7 @@ export default function RootLayout({
           <Footer />
           <FloatingButtons />
           <GlobalClientEffects />
+          <Analytics />
         </ThemeProvider>
         <Toaster />
       </body>
