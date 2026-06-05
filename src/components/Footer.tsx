@@ -55,8 +55,8 @@ export default function Footer() {
         <ul className="space-y-2">
           <li className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-[oklch(0.45_0.15_250)]" />
-            <a href="tel:+40746808721" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
-              +40 746 808 721
+            <a href="tel:+40756161205" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
+              +40 756 161 205
             </a>
           </li>
 

@@ -8,7 +8,7 @@ export default function FloatingButtons() {
     <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
       {/* Phone Button */}
       <a
-        href="tel:+40746808721"
+        href="tel:+40756161205"
         className="h-14 w-14 rounded-full bg-[oklch(0.45_0.15_250)] text-white flex items-center justify-center shadow-lg hover:bg-[oklch(0.40_0.15_250)] transition-colors"
         aria-label="Sună acum"
       >
@@ -24,7 +24,7 @@ export default function FloatingButtons() {
       </Link> */}
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/40746808721"
+        href="https://wa.me/40756161205"
         target="_blank"
         rel="noopener noreferrer"
         className="h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:bg-[#1ebe5d] transition-colors"

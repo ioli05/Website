@@ -12,46 +12,52 @@ const categories = [
 
 const prices = {
   ortopedie: [
-    { name: 'Consultație ortopedică', price: '100 RON' },
-    { name: 'Ecografie articulară', price: '150 RON' },
-    { name: 'Infiltratie intraarticulara', price: '200 RON' },
-    { name: 'Radiografie segment osos', price: '80 RON' },
-    { name: 'Tratament fracturi', price: '250 RON' },
+    { name: 'Consultație ortopedică - medic primar', price: '300 RON' },
+    { name: 'Consultație ortopedică - medic specialist', price: '250 RON' },
+    { name: 'Ecografie musculo-scheletală', price: '180 RON' },
+    { name: 'Infiltrație intraarticulară (acid hialuronic / corticosteroid)', price: '250 - 450 RON' },
+    { name: 'Radiografie segment osos', price: '100 - 130 RON' },
+    { name: 'Tratament fracturi (imobilizare / atelă)', price: '250 - 400 RON' },
   ],
+
   cardiologie: [
-    { name: 'Consultație cardiologică', price: '120 RON' },
-    { name: 'EKG', price: '80 RON' },
-    { name: 'Ecocardiografie', price: '200 RON' },
-    { name: 'Holter ECG 24h', price: '180 RON' },
-    { name: 'Test efort', price: '250 RON' },
+    { name: 'Consultație cardiologică', price: '200 RON' },
+    { name: 'EKG', price: '80 - 100 RON' },
+    { name: 'Ecocardiografie', price: '250 - 350 RON' },
+    { name: 'Holter ECG 24h', price: '200 - 250 RON' },
+    { name: 'Test de efort', price: '250 - 350 RON' },
   ],
+
   radiologie: [
-    { name: 'Radiografie torace', price: '75 RON' },
-    { name: 'Radiografie coloana vertebrala', price: '90 RON' },
-    { name: 'Radiografie membru superior', price: '70 RON' },
-    { name: 'Radiografie membru inferior', price: '70 RON' },
-    { name: 'Scanare CT', price: '350 RON' },
+    { name: 'Radiografie torace', price: '100 - 120 RON' },
+    { name: 'Radiografie coloană vertebrală', price: '120 - 150 RON' },
+    { name: 'Radiografie membru superior', price: '90 - 110 RON' },
+    { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
+    { name: 'CT segmentar', price: '350 - 450 RON' },
   ],
+
   reumatologie: [
-    { name: 'Consultație reumatologică', price: '110 RON' },
-    { name: 'Analize de sange specifice', price: '150 RON' },
-    { name: 'Ecografie articulatii', price: '130 RON' },
-    { name: 'Tratament cu bioterapie', price: '400 RON' },
-    { name: 'Fizioterapie', price: '80 RON/sedinta' },
+    { name: 'Consultație reumatologică', price: '200 RON' },
+    { name: 'Analize specifice (profil reumatologic)', price: '150 - 300 RON' },
+    { name: 'Ecografie articulații', price: '150 - 200 RON' },
+    { name: 'Infiltrații / terapii biologice', price: '350 - 600 RON' },
+    { name: 'Fizioterapie', price: '80 - 120 RON / ședință' },
   ],
+
   plastica: [
-    { name: 'Consultație chirurgie plastică', price: '100 RON' },
-    { name: 'Proceduri estetice', price: 'De la 500 RON' },
-    { name: 'Tratamente faciale', price: 'De la 300 RON' },
-    { name: 'Injectari estetice', price: 'De la 250 RON' },
-    { name: 'Consultatie post-operatorie', price: 'Gratuit' },
+    { name: 'Consultație chirurgie plastică', price: '200 RON' },
+    { name: 'Botox (zonă)', price: '500 - 800 RON' },
+    { name: 'Augmentare buze (acid hialuronic)', price: '900 - 1.400 RON' },
+    { name: 'Tratamente faciale estetice', price: '300 - 600 RON' },
+    { name: 'Consultație post-operatorie', price: 'Gratuit' },
   ],
+
   dermatologie: [
-    { name: 'Consultație dermatologică', price: '150 RON' },
-    { name: 'Dermatoscopie digitală (analiza alunițelor)', price: '200 RON' },
-    { name: 'Crioterapie', price: '300 RON' },
-    { name: 'Peeling', price: '250 RON' },
-    { name: 'Electrocauterizare leziuni cutanate', price: '150 - 300 RON' },
+    { name: 'Consultație dermatologică', price: '150 - 200 RON' },
+    { name: 'Dermatoscopie digitală', price: '200 - 250 RON' },
+    { name: 'Crioterapie', price: '150 - 300 RON' },
+    { name: 'Peeling chimic', price: '250 - 400 RON' },
+    { name: 'Electrocauterizare leziuni', price: '150 - 350 RON' },
   ],
 };
 

@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { Raleway } from "next/font/google";
-
+ 
 import "./globals.css";
 
 const geistSans = Geist({

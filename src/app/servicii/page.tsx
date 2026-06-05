@@ -2,60 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Users, Microscope, Heart, Bone, Pill, ClipboardCheck } from 'lucide-react';
 
-const categories = [
-  { id: 'ortopedie', name: 'Ortopedie' },
-  { id: 'cardiologie', name: 'Cardiologie' },
-  { id: 'radiologie', name: 'Radiologie' },
-  { id: 'reumatologie', name: 'Reumatologie' },
-  { id: 'plastica', name: 'Chirurgie Plastică' },
-  { id: 'dermatologie', name: 'Dermatologie' },
-];
-
-const prices = {
-  ortopedie: [
-    { name: 'Consultație ortopedică', price: '100 RON' },
-    { name: 'Ecografie articulară', price: '150 RON' },
-    { name: 'Infiltratie intraarticulara', price: '200 RON' },
-    { name: 'Radiografie segment osos', price: '80 RON' },
-    { name: 'Tratament fracturi', price: '250 RON' },
-  ],
-  cardiologie: [
-    { name: 'Consultație cardiologică', price: '120 RON' },
-    { name: 'EKG', price: '80 RON' },
-    { name: 'Ecocardiografie', price: '200 RON' },
-    { name: 'Holter ECG 24h', price: '180 RON' },
-    { name: 'Test efort', price: '250 RON' },
-  ],
-  radiologie: [
-    { name: 'Radiografie torace', price: '75 RON' },
-    { name: 'Radiografie coloana vertebrala', price: '90 RON' },
-    { name: 'Radiografie membru superior', price: '70 RON' },
-    { name: 'Radiografie membru inferior', price: '70 RON' },
-    { name: 'Scanare CT', price: '350 RON' },
-  ],
-  reumatologie: [
-    { name: 'Consultație reumatologică', price: '110 RON' },
-    { name: 'Analize de sange specifice', price: '150 RON' },
-    { name: 'Ecografie articulatii', price: '130 RON' },
-    { name: 'Tratament cu bioterapie', price: '400 RON' },
-    { name: 'Fizioterapie', price: '80 RON/sedinta' },
-  ],
-  plastica: [
-    { name: 'Consultație chirurgie plastică', price: '100 RON' },
-    { name: 'Proceduri estetice', price: 'De la 500 RON' },
-    { name: 'Tratamente faciale', price: 'De la 300 RON' },
-    { name: 'Injectari estetice', price: 'De la 250 RON' },
-    { name: 'Consultatie post-operatorie', price: 'Gratuit' },
-  ],
-  dermatologie: [
-    { name: 'Consultație dermatologică', price: '150 RON' },
-    { name: 'Dermatoscopie digitală (analiza alunițelor)', price: '200 RON' },
-    { name: 'Crioterapie', price: '300 RON' },
-    { name: 'Peeling', price: '250 RON' },
-    { name: 'Electrocauterizare leziuni cutanate', price: '150 - 300 RON' },
-  ],
-};
-
 export default function ServiciiPage() {
   return (
     <>
@@ -85,6 +31,28 @@ export default function ServiciiPage() {
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     O discuție deschisă și atentă, în care medicul îți ascultă simptomele, îți înțelege istoricul și îți răspunde la întrebări. Consultația este momentul în care primești claritate, direcție și un plan adaptat nevoilor tale reale, nu o soluție standard.
                   </p>
+                  <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -107,6 +75,28 @@ export default function ServiciiPage() {
                   </h2>
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     Investigații rapide și precise, gândite să ofere răspunsuri clare atunci când ai dureri, disconfort sau suspiciuni de leziuni. Radiografiile ne ajută să vedem exact ce se întâmplă în interior, astfel încât tratamentul să fie corect încă de la început.                  </p>
+                  <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -129,6 +119,28 @@ export default function ServiciiPage() {
                   </h2>
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     O abordare modernă, orientată spre prevenție și vindecare naturală. Aceste tratamente susțin organismul să repare țesuturile afectate, reduc inflamația și încetinesc evoluția problemelor articulare. Sunt ideale pentru pacienții care își doresc soluții sigure, minim invazive și cu efect pe termen lung.                  </p>
+                <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -151,6 +163,28 @@ export default function ServiciiPage() {
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     Evaluări blânde și tratamente personalizate pentru pielea ta, fie că este vorba despre probleme medicale sau despre dorința de a-ți îmbunătăți aspectul. Scopul este să te simți bine în pielea ta, cu soluții adaptate sensibilității și nevoilor tale.                
                   </p>  
+                  <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -172,6 +206,28 @@ export default function ServiciiPage() {
                   </h2>
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     Un moment important pentru sănătatea ta generală. Verificăm funcția inimii, ritmul și eventualele riscuri, astfel încât să poți preveni problemele înainte să apară. Este o investiție în liniștea ta pe termen lung.                  </p>  
+                  <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -194,6 +250,28 @@ export default function ServiciiPage() {
                   <p className="text-base text-[oklch(0.45_0.05_260)]">
                     Intervenții delicate, cu rezultate naturale, pentru pacienții care își doresc o îmbunătățire discretă a aspectului. Scopul nu este schimbarea, ci armonizarea trăsăturilor și redarea încrederii în propria imagine.
                   </p>
+                  <div className="mt-4">
+                    <a 
+                      href="/preturi" 
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.15_250)] font-medium hover:opacity-80 transition"
+                    >
+                      Vezi prețurile
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={1.8} 
+                        stroke="currentColor" 
+                        className="w-5 h-5"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" 
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative w-full md:w-48 h-40 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
