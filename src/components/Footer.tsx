@@ -62,7 +62,7 @@ export default function Footer() {
 
           <li className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-[oklch(0.45_0.15_250)]" />
-            <a href="mailto:contact@orthoxray.ro" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
+            <a href="mailto:orthoxrayclinic@gmail.com" className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]">
               contact@orthoxray.ro
             </a>
           </li>
