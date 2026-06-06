@@ -70,11 +70,11 @@ export default function Footer() {
           <li className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-[oklch(0.45_0.15_250)]" />
             <a
-              href="https://maps.google.com/?q=Aleea+Borcea+Bucuresti"
+              href="https://maps.google.com/?q=Ortho+X-Ray+Clinic"
               target="_blank"
               className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)]"
             >
-              Aleea Borcea, București
+              Bd Gheorghe Șincai 16, București
             </a>
           </li>
 
@@ -123,8 +123,5 @@ export default function Footer() {
 
   </div>
 </footer>
-
-
-
   );
 }

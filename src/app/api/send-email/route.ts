@@ -11,7 +11,10 @@ interface EmailData {
 
 export async function POST(request: Request) {
   try {
+    console.log("KEY LOADED:", !!process.env.RESEND_API_KEY);
     const data: EmailData = await request.json();
+
+    console.log("REQUEST BODY:", data);
 
     // Validare
     if (!data.name || !data.email || !data.phone) {
@@ -44,8 +47,8 @@ export async function POST(request: Request) {
     const resend = new Resend(resendApiKey);
 
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Ortho X-Ray Clinic <onboarding@resend.dev>',
-      to: ['ionela.nicuta05@gmail.com'],
+      from: 'Ortho X-Ray Clinic <contact@orthoxray.ro>',
+      to: ['orthoxrayclinic@gmail.com'],
       subject: `Programare nouă de la ${data.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

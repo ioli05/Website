@@ -14,51 +14,54 @@ const prices = {
   ortopedie: [
     { name: 'Consultație ortopedică - medic primar', price: '300 RON' },
     { name: 'Consultație ortopedică - medic specialist', price: '250 RON' },
-    { name: 'Ecografie musculo-scheletală', price: '180 RON' },
-    { name: 'Infiltrație intraarticulară (acid hialuronic / corticosteroid)', price: '250 - 450 RON' },
-    { name: 'Radiografie segment osos', price: '100 - 130 RON' },
-    { name: 'Tratament fracturi (imobilizare / atelă)', price: '250 - 400 RON' },
+    { name: 'Infiltrație intraarticulară acid hialuronic / corticosteroid', price: '300 RON + substanță' },
+    { name: 'Infiltrație PRP', price: '800 RON' },
+    { name: 'Infiltrație Sanakin', price: '1200 RON' },
+    { name: 'Infiltrație șold eco ghidată', price: '500 RON + substanță' },
+    { name: 'Infiltrație coloană eco ghidată', price: '500 RON' },
+    { name: 'Imobilizare gipsată', price: '300 RON' },
+    { name: 'Tratament intravenos', price: '150 RON' },
   ],
 
-  cardiologie: [
-    { name: 'Consultație cardiologică', price: '200 RON' },
-    { name: 'EKG', price: '80 - 100 RON' },
-    { name: 'Ecocardiografie', price: '250 - 350 RON' },
-    { name: 'Holter ECG 24h', price: '200 - 250 RON' },
-    { name: 'Test de efort', price: '250 - 350 RON' },
-  ],
+//   cardiologie: [
+//     { name: 'Consultație cardiologică', price: '200 RON' },
+//     { name: 'EKG', price: '80 - 100 RON' },
+//     { name: 'Ecocardiografie', price: '250 - 350 RON' },
+//     { name: 'Holter ECG 24h', price: '200 - 250 RON' },
+//     { name: 'Test de efort', price: '250 - 350 RON' },
+//   ],
 
   radiologie: [
-    { name: 'Radiografie torace', price: '100 - 120 RON' },
-    { name: 'Radiografie coloană vertebrală', price: '120 - 150 RON' },
-    { name: 'Radiografie membru superior', price: '90 - 110 RON' },
-    { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
-    { name: 'CT segmentar', price: '350 - 450 RON' },
+    { name: 'Radiografie 1 incidență', price: '100 RON' },
+    { name: 'Radiografie OrthoLeg / OrthoSpine', price: '450 RON' },
+    // { name: 'Radiografie membru superior', price: '90 - 110 RON' },
+    // { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
+    // { name: 'CT segmentar', price: '350 - 450 RON' },
   ],
 
-  reumatologie: [
-    { name: 'Consultație reumatologică', price: '200 RON' },
-    { name: 'Analize specifice (profil reumatologic)', price: '150 - 300 RON' },
-    { name: 'Ecografie articulații', price: '150 - 200 RON' },
-    { name: 'Infiltrații / terapii biologice', price: '350 - 600 RON' },
-    { name: 'Fizioterapie', price: '80 - 120 RON / ședință' },
-  ],
+//   reumatologie: [
+//     { name: 'Consultație reumatologică', price: '200 RON' },
+//     { name: 'Analize specifice (profil reumatologic)', price: '150 - 300 RON' },
+//     { name: 'Ecografie articulații', price: '150 - 200 RON' },
+//     { name: 'Infiltrații / terapii biologice', price: '350 - 600 RON' },
+//     { name: 'Fizioterapie', price: '80 - 120 RON / ședință' },
+//   ],
 
-  plastica: [
-    { name: 'Consultație chirurgie plastică', price: '200 RON' },
-    { name: 'Botox (zonă)', price: '500 - 800 RON' },
-    { name: 'Augmentare buze (acid hialuronic)', price: '900 - 1.400 RON' },
-    { name: 'Tratamente faciale estetice', price: '300 - 600 RON' },
-    { name: 'Consultație post-operatorie', price: 'Gratuit' },
-  ],
+//   plastica: [
+//     { name: 'Consultație chirurgie plastică', price: '200 RON' },
+//     { name: 'Botox (zonă)', price: '500 - 800 RON' },
+//     { name: 'Augmentare buze (acid hialuronic)', price: '900 - 1.400 RON' },
+//     { name: 'Tratamente faciale estetice', price: '300 - 600 RON' },
+//     { name: 'Consultație post-operatorie', price: 'Gratuit' },
+//   ],
 
-  dermatologie: [
-    { name: 'Consultație dermatologică', price: '150 - 200 RON' },
-    { name: 'Dermatoscopie digitală', price: '200 - 250 RON' },
-    { name: 'Crioterapie', price: '150 - 300 RON' },
-    { name: 'Peeling chimic', price: '250 - 400 RON' },
-    { name: 'Electrocauterizare leziuni', price: '150 - 350 RON' },
-  ],
+//   dermatologie: [
+//     { name: 'Consultație dermatologică', price: '150 - 200 RON' },
+//     { name: 'Dermatoscopie digitală', price: '200 - 250 RON' },
+//     { name: 'Crioterapie', price: '150 - 300 RON' },
+//     { name: 'Peeling chimic', price: '250 - 400 RON' },
+//     { name: 'Electrocauterizare leziuni', price: '150 - 350 RON' },
+//   ],
 };
 
 export default function PreturiPage() {
@@ -120,7 +123,7 @@ export default function PreturiPage() {
         </div>
 
         {/* CARDIOLOGIE */}
-        <div id="cardiologie" className="mt-16">
+        {/* <div id="cardiologie" className="mt-16">
           <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
             Cardiologie
           </h3>
@@ -132,7 +135,7 @@ export default function PreturiPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* RADIOLOGIE */}
         <div id="radiologie" className="mt-16">
@@ -150,7 +153,7 @@ export default function PreturiPage() {
         </div>
 
         {/* REUMATOLOGIE */}
-        <div id="reumatologie" className="mt-16">
+        {/* <div id="reumatologie" className="mt-16">
           <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
             Reumatologie
           </h3>
@@ -162,10 +165,10 @@ export default function PreturiPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CHIRURGIE PLASTICĂ */}
-        <div id="plastica" className="mt-16">
+        {/* <div id="plastica" className="mt-16">
           <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
             Chirurgie plastică
           </h3>
@@ -177,10 +180,10 @@ export default function PreturiPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* DERMATOLOGIE */}
-        <div id="dermatologie" className="mt-16">
+        {/* <div id="dermatologie" className="mt-16">
           <h3 className="text-xl font-bold text-[oklch(0.45_0.15_250)] mb-6 pb-2 border-b">
             Dermatologie
           </h3>
@@ -192,7 +195,7 @@ export default function PreturiPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </div>
 

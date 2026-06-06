@@ -25,17 +25,17 @@ const specialties = [
 ];
 
 const teamMembers = [
-  { name: 'Dr. Zubaci Radu', specialty: 'Medic primar Ortopedie', image: 'male_icon.png' },
-  { name: 'Dr. Nițan Ovidiu', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
-  { name: 'Dr. Nițan Ionela', specialty: 'Medic Specialist Cardiologie', image: 'female_icon.png' },
-  { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
-  { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
-  { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'female_icon.png' },
-  { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
-  { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'female_icon.png' },
-  { name: 'Dr. Radu Andreea', specialty: 'Medic Specialist Ortopedie', image: 'female_icon.png' },
-  { name: 'Dr. Popa Cristian', specialty: 'Medic Primar Radiologie', image: 'male_icon.png' },
-  { name: 'Dr. Gheorghe Mihai', specialty: 'Medic specialist Cardiologie', image: 'male_icon.png' },
+  { name: 'Dr. Zubaci Radu', specialty: 'Medic Primar Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Nitan Ovidiu', specialty: 'Medic Specialist Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Bodale Laura', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
+  // { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
+  // { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
+  // { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'female_icon.png' },
+  // { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
+  // { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'female_icon.png' },
+  // { name: 'Dr. Radu Andreea', specialty: 'Medic Specialist Ortopedie', image: 'female_icon.png' },
+  // { name: 'Dr. Popa Cristian', specialty: 'Medic Primar Radiologie', image: 'male_icon.png' },
+  // { name: 'Dr. Gheorghe Mihai', specialty: 'Medic specialist Cardiologie', image: 'male_icon.png' },
 ];
 
 const specialtyOptions = [
@@ -117,6 +117,7 @@ export default function HomePage() {
   const slides = useMemo(() => getSlidesData(teamMembers, perView), [perView]);
   const totalSlides = slides.length;
   const device = useDeviceType();
+  const showArrows = teamMembers.length > perView;
 
   // Reset slide când se schimbă viewport-ul
   useEffect(() => {
@@ -457,38 +458,42 @@ export default function HomePage() {
             </div>
 
             {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className={`
-                absolute top-1/2 -translate-y-1/2 
-                ${isTablet ? '-left-8' : '-left-14'} 
-                h-12 w-12 rounded-full bg-white shadow-lg 
-                flex items-center justify-center 
-                text-[oklch(0.45_0.15_250)] 
-                hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
-                transition-colors
-              `}
-              aria-label="Previous"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
+            {showArrows && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className={`
+                    absolute top-1/2 -translate-y-1/2 
+                    ${isTablet ? '-left-8' : '-left-14'} 
+                    h-12 w-12 rounded-full bg-white shadow-lg 
+                    flex items-center justify-center 
+                    text-[oklch(0.45_0.15_250)] 
+                    hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
+                    transition-colors
+                  `}
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
 
+                <button
+                  onClick={nextSlide}
+                  className={`
+                    absolute top-1/2 -translate-y-1/2 
+                    ${isTablet ? '-right-8' : '-right-14'} 
+                    h-12 w-12 rounded-full bg-white shadow-lg 
+                    flex items-center justify-center 
+                    text-[oklch(0.45_0.15_250)] 
+                    hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
+                    transition-colors
+                  `}
+                  aria-label="Next"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </>
+            )}
 
-            <button
-            onClick={nextSlide}
-            className={`
-              absolute top-1/2 -translate-y-1/2 
-              ${isTablet ? '-right-8' : '-right-14'} 
-              h-12 w-12 rounded-full bg-white shadow-lg 
-              flex items-center justify-center 
-              text-[oklch(0.45_0.15_250)] 
-              hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
-              transition-colors
-            `}
-            aria-label="Next"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
 
             {/* Dots */}
             <div className={`flex justify-center gap-2 ${isTablet ? 'mt-6' : 'mt-8'}`}>
