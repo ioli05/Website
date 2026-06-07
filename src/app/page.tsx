@@ -28,8 +28,8 @@ const teamMembers = [
   { name: 'Dr. Zubaci Radu', specialty: 'Medic Primar Ortopedie', image: 'male_icon.png' },
   { name: 'Dr. Nitan Ovidiu', specialty: 'Medic Specialist Ortopedie', image: 'male_icon.png' },
   { name: 'Dr. Bodale Laura', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
-  // { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
-  // { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
+//  { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
+//  { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
   // { name: 'Dr. Dumitrescu Elena', specialty: 'Medic Primar Cardiologie', image: 'female_icon.png' },
   // { name: 'Dr. Marinescu Alexandru', specialty: 'Medic specialist Ortopedie', image: 'male_icon.png' },
   // { name: 'Dr. Stancu Ana', specialty: 'Medic Specialist Dermatologie', image: 'female_icon.png' },
@@ -103,7 +103,6 @@ function useDeviceType() {
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -113,15 +112,46 @@ export default function HomePage() {
   });
 
   const isTablet = useIsTablet();
-  const perView = isTablet ? 2 : 5;
+  const device = useDeviceType();
+  const perView =
+  device === 'desktop'
+    ? 5
+    : device === 'mobile-landscape'
+    ? 3
+    : 2;
   const slides = useMemo(() => getSlidesData(teamMembers, perView), [perView]);
   const totalSlides = slides.length;
-  const device = useDeviceType();
-  const showArrows = teamMembers.length > perView;
+  // câte carduri sunt vizibile efectiv
+  const visibleCount = Math.min(perView, teamMembers.length);  
+  const showArrows = teamMembers.length > visibleCount;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const getWidthClass = (count: number) => {
+    switch (count) {
+      case 1: return 'w-full';
+      case 2: return 'w-1/2';
+      case 3: return 'w-1/3';
+      case 4: return 'w-1/4';
+      case 5: return 'w-1/5';
+      default: return 'w-full';
+    }
+  };
 
+  const nextSlide = () => {
+    if (currentIndex < teamMembers.length - visibleCount) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
+    };
+  const widthClass = getWidthClass(visibleCount);
+  
   // Reset slide când se schimbă viewport-ul
   useEffect(() => {
-    setCurrentSlide(0);
+    setCurrentIndex(0);
   }, [perView]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -157,15 +187,6 @@ export default function HomePage() {
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
-
-  // Loop infinit - la ultima pagină revine la prima
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  }, [totalSlides]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  }, [totalSlides]);
 
   return (
     <>
@@ -399,119 +420,82 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Carousel Wrapper */}
-          <div className={`relative mx-auto ${isTablet ? 'max-w-lg' : 'max-w-6xl'}`}>
+         {/* Carousel Wrapper */}
+        <div className={`relative mx-auto ${isTablet ? 'max-w-lg' : 'max-w-6xl'}`}>
 
-            {/* Slides */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-out"
-                style={{
-                  transform: `translateX(-${
-                    currentSlide *
-                    (100 /
-                      (device === 'desktop'
-                        ? 5
-                        : device === 'mobile-landscape'
-                        ? 3
-                        : 2))
-                  }%)`
-                }}
-              >
-                {slides.map((slide, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <div className="flex justify-center">
-                      {slide.map((member, index) => (
-                        <div
-                          key={index}
-                          className={`flex-shrink-0 px-4 ${
-                            device === 'desktop'
-                              ? 'w-1/5'
-                              : device === 'mobile-landscape'
-                              ? 'w-1/3'
-                              : 'w-1/2'
-                          }`}
-                        >
-                          <div className="text-center p-4">
-                            <div className="relative h-32 w-32 md:h-40 md:w-40 mx-auto mb-4 rounded-full overflow-hidden bg-[oklch(0.93_0.05_250)]">
-                              <Image
-                                src={`/images/${member.image}?w=200&h=200&fit=crop&crop=face`}
-                                alt={member.name}
-                                fill
-                                sizes={isTablet ? '128px' : '160px'}
-                                className="object-cover"
-                              />
-                            </div>
-                            <h3 className="font-semibold text-sm md:text-base text-[oklch(0.25_0.02_260)]">
-                              {member.name}
-                            </h3>
-                            <p className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] mt-1">
-                              {member.specialty}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+          {/* Slides */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`
+              }}
+            >
+              {teamMembers.map((member, index) => (
+                <div key={index} className={`flex-shrink-0 px-4 ${widthClass}`}>
+                  <div className="text-center p-4">
+                    <div className="relative h-32 w-32 md:h-40 md:w-40 mx-auto mb-4 rounded-full overflow-hidden bg-[oklch(0.93_0.05_250)]">
+                      <Image
+                        src={`/images/${member.image}?w=200&h=200&fit=crop&crop=face`}
+                        alt={member.name}
+                        fill
+                        sizes={isTablet ? '128px' : '160px'}
+                        className="object-cover"
+                      />
                     </div>
+
+                    <h3 className="font-semibold text-sm md:text-base text-[oklch(0.25_0.02_260)]">
+                      {member.name}
+                    </h3>
+
+                    <p className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] mt-1">
+                      {member.specialty}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            {showArrows && (
-              <>
-                <button
-                  onClick={prevSlide}
-                  className={`
-                    absolute top-1/2 -translate-y-1/2 
-                    ${isTablet ? '-left-8' : '-left-14'} 
-                    h-12 w-12 rounded-full bg-white shadow-lg 
-                    flex items-center justify-center 
-                    text-[oklch(0.45_0.15_250)] 
-                    hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
-                    transition-colors
-                  `}
-                  aria-label="Previous"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-
-                <button
-                  onClick={nextSlide}
-                  className={`
-                    absolute top-1/2 -translate-y-1/2 
-                    ${isTablet ? '-right-8' : '-right-14'} 
-                    h-12 w-12 rounded-full bg-white shadow-lg 
-                    flex items-center justify-center 
-                    text-[oklch(0.45_0.15_250)] 
-                    hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
-                    transition-colors
-                  `}
-                  aria-label="Next"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </>
-            )}
-
-
-            {/* Dots */}
-            <div className={`flex justify-center gap-2 ${isTablet ? 'mt-6' : 'mt-8'}`}>
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    currentSlide === index
-                      ? 'w-6 bg-[oklch(0.45_0.15_250)]'
-                      : 'w-2 bg-[oklch(0.45_0.15_250)]/30'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
+                </div>
               ))}
             </div>
-
           </div>
+
+          {/* Navigation Buttons */}
+          {showArrows && (
+            <>
+              <button
+                onClick={prevSlide}
+                className={`
+                  absolute top-1/2 -translate-y-1/2 
+                  ${isTablet ? '-left-8' : '-left-14'} 
+                  h-12 w-12 rounded-full bg-white shadow-lg 
+                  flex items-center justify-center 
+                  text-[oklch(0.45_0.15_250)] 
+                  hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
+                  transition-colors
+                `}
+                aria-label="Previous"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className={`
+                  absolute top-1/2 -translate-y-1/2 
+                  ${isTablet ? '-right-8' : '-right-14'} 
+                  h-12 w-12 rounded-full bg-white shadow-lg 
+                  flex items-center justify-center 
+                  text-[oklch(0.45_0.15_250)] 
+                  hover:bg-[oklch(0.45_0.15_250)] hover:text-white 
+                  transition-colors
+                `}
+                aria-label="Next"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+            </>
+          )}
+
+        </div>
+
         </div>
       </section>
 
