@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         success: true,
-        message: 'Programarea a fost înregistrată (mod demo)'
+        message: 'Programarea a fost înregistrată'
       });
     }
 
@@ -47,8 +47,8 @@ export async function POST(request: Request) {
     const resend = new Resend(resendApiKey);
 
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Ortho X-Ray Clinic <contact@orthoxray.ro>',
-      to: ['orthoxrayclinic@gmail.com'],
+      from: 'Ortho X-Ray Clinic <no-reply@orthoxray.ro>',
+      to: ['contact@orthoxray.ro'],
       subject: `Programare nouă de la ${data.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
