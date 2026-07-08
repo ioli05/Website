@@ -218,7 +218,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="#servicii"
+                  href="/servicii"
                   className="inline-flex h-14 items-center justify-center rounded-lg border-2 border-[oklch(0.45_0.15_250)] px-6 text-sm font-medium text-[oklch(0.45_0.15_250)] hover:bg-[oklch(0.45_0.15_250)] hover:text-white transition-colors"
                 >
                   Vezi serviciile

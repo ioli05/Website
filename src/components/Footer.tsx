@@ -2,6 +2,14 @@ import Link from 'next/link';
 import { Shield, MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 import Image from "next/image";
 
+const navItems = [
+  { href: '/', label: 'Acasă' },
+  { href: '/servicii', label: 'Servicii' },
+  { href: '/#echipa', label: 'Echipă' },
+  { href: '/#programare', label: 'Programare' },
+  { href: '/preturi', label: 'Prețuri' },
+];
+
 export default function Footer() {
   return (
 <footer className="bg-[oklch(0.96_0.02_250)] border-t">
@@ -34,13 +42,13 @@ export default function Footer() {
           Navigare
         </h3>
         <ul className="space-y-2">
-          {['Acasă', 'Servicii', 'Echipă', 'Programare', 'Preturi'].map((item) => (
-            <li key={item}>
+          {navItems.map((item) => (
+            <li key={item.label}>
               <Link
-                href={item === 'Acasă' ? '/' : `/${item.toLowerCase()}`}
+                href={item.href}
                 className="text-xs md:text-sm text-[oklch(0.45_0.05_260)] hover:text-[oklch(0.45_0.15_250)] transition-colors"
               >
-                {item}
+                {item.label}
               </Link>
             </li>
           ))}

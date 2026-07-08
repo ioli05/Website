@@ -12,8 +12,9 @@ const categories = [
 
 const prices = {
   ortopedie: [
-    { name: 'Consultație ortopedică - medic primar', price: '300 RON' },
-    { name: 'Consultație ortopedică - medic specialist', price: '250 RON' },
+    { name: 'Consult ortopedie - medic primar', price: '300 RON' },
+    { name: 'Consult ortopedie - medic specialist', price: '250 RON' },
+    { name: 'Control ortopedie', price: '200 RON' },
     { name: 'Infiltrație intraarticulară acid hialuronic / corticosteroid', price: '300 RON + substanță' },
     { name: 'Infiltrație PRP', price: '800 RON' },
     { name: 'Infiltrație Sanakin', price: '1200 RON' },
@@ -21,6 +22,11 @@ const prices = {
     { name: 'Infiltrație coloană eco ghidată', price: '500 RON' },
     { name: 'Imobilizare gipsată', price: '300 RON' },
     { name: 'Tratament intravenos', price: '150 RON' },
+    { name: 'Suprimare fire sutură', price: '100 RON' },
+    { name: 'Schimbare pansament steril', price: '100 RON' },
+    { name: 'Îndepărtare atelă gipsată', price: '100 RON' },
+    { name: 'Puncție articulară', price: '200 RON' },
+    { name: 'Reducere închisă fracturi / luxații și imobilizare', price: '500 RON' },
   ],
 
 //   cardiologie: [
@@ -32,9 +38,10 @@ const prices = {
 //   ],
 
   radiologie: [
-    { name: 'Radiografie 1 incidență', price: '100 RON' },
+    { name: 'Radiografie membre - 1 incidență', price: '100 RON' },
+    { name: 'Radiografie membre - 2 incidențe', price: '150 RON' },
+    { name: 'Radiografie membre - 3 incidențe', price: '300 RON' },
     { name: 'Radiografie OrthoLeg / OrthoSpine', price: '450 RON' },
-    // { name: 'Radiografie membru superior', price: '90 - 110 RON' },
     // { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
     // { name: 'CT segmentar', price: '350 - 450 RON' },
   ],
