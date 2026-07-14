@@ -101,7 +101,7 @@ export default function Footer() {
           Social
         </h3>
         <div className="flex gap-3">
-          <a href="#" className="h-8 w-8 rounded-full bg-[oklch(0.45_0.15_250)] flex items-center justify-center text-white hover:bg-[oklch(0.40_0.15_250)] transition-colors">
+          <a href="https://www.facebook.com/share/19BmFqgPxd/?mibextid=wwXIfr" className="h-8 w-8 rounded-full bg-[oklch(0.45_0.15_250)] flex items-center justify-center text-white hover:bg-[oklch(0.40_0.15_250)] transition-colors">
             <Facebook className="h-3.5 w-3.5" />
           </a>
           <a href="#" className="h-8 w-8 rounded-full bg-[oklch(0.45_0.15_250)] flex items-center justify-center text-white hover:bg-[oklch(0.40_0.15_250)] transition-colors">

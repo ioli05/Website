@@ -4,6 +4,7 @@
   <!-- Pagina principală -->
   <url>
     <loc>https://orthoxray.ro/</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -11,6 +12,7 @@
   <!-- Servicii -->
   <url>
     <loc>https://orthoxray.ro/servicii</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -18,6 +20,7 @@
   <!-- Prețuri -->
   <url>
     <loc>https://orthoxray.ro/preturi</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>

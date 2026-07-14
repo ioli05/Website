@@ -1,5 +1,24 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, Users, Microscope, Heart, Bone, Pill, ClipboardCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Prețuri Radiologie, Ecografie și Consultații Medicale",
+  description:
+    "Lista completă de prețuri pentru radiologie digitală, ecografie, ortopedie, cardiologie, dermatologie, reumatologie și chirurgie plastică la Ortho X-Ray Clinic București.",
+  keywords: [
+    "prețuri radiologie",
+    "pret radiografie",
+    "tarife consultații medicale",
+    "preț ortopedie",
+    "preț cardiologie",
+    "clinică medicală București"
+  ],
+  alternates: {
+    canonical: "/preturi",
+  },
+};
+
 
 const categories = [
   { id: 'ortopedie', name: 'Ortopedie' },

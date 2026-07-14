@@ -1,6 +1,28 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, Users, Microscope, Heart, Bone, Pill, ClipboardCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Servicii Medicale – Radiologie, Ortopedie, Cardiologie, Dermatologie",
+  description:
+    "Servicii medicale complete: radiologie digitală, ortopedie, cardiologie, dermatologie, tratamente regenerative, proceduri estetice minim invazive și reumatologie, disponibile la Ortho X-Ray Clinic București.",
+  keywords: [
+    "servicii medicale Bucuresti",
+    "radiologie digitala",
+    "ortopedie Bucuresti",
+    "cardiologie Bucuresti",
+    "infiltratii Bucuresti",
+    "PRP Bucuresti",
+    "acid hialuronic infiltratii",
+    "tratamente regenerative",
+    "proceduri estetice"
+  ],
+  alternates: {
+    canonical: "/servicii",
+  },
+};
+
 
 export default function ServiciiPage() {
   return (

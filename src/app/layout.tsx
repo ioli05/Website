@@ -28,16 +28,84 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Ortho X-Ray Clinic - Îngrijire Medicală Profesionistă",
-  description: "Oferim servicii medicale complete de ortopedie, cardiologie, radiologie și reumatologie. Medici cu experiență într-un mediu modern și sigur.",
-  keywords: ["clinică medicală", "ortopedie", "cardiologie", "radiologie", "București", "România"],
+  metadataBase: new URL("https://orthoxray.ro"),
+  title: {
+    default: "Ortho X-Ray Clinic – Radiologie, Ortopedie și Specialități Medicale în București",
+    template: "%s | Ortho X-Ray Clinic",
+  },
+  description:
+    "Clinică medicală multidisciplinară în București, cu servicii de radiologie digitală, ortopedie, cardiologie, dermatologie, reumatologie și chirurgie plastică. Programări rapide și aparatură modernă.",
+  keywords: [
+    "clinică medicală București",
+    "radiologie digitală",
+    "ortopedie București",
+    "cardiologie București",
+    "dermatologie București",
+    "ecografie București"
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Ortho X-Ray Clinic",
-    description: "Îngrijire medicală profesionistă pentru o viață mai sănătoasă.",
+    title: "Ortho X-Ray Clinic – Radiologie și Specialități Medicale în București",
+    description:
+      "Radiologie digitală, ortopedie, cardiologie, dermatologie, reumatologie și chirurgie plastică. Servicii medicale moderne în București.",
     type: "website",
     locale: "ro_RO",
+    url: "https://orthoxray.ro",
+    siteName: "Ortho X-Ray Clinic",
   },
 };
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Ortho X-Ray Clinic",
+  "image": "https://orthoxray.ro/images/clinic.jpeg",
+  "url": "https://orthoxray.ro",
+  "telephone": "+40756161205",
+  "email": "contact@orthoxray.ro",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bd Gheorghe Șincai 16",
+    "addressLocality": "București",
+    "addressRegion": "Sector 4",
+    "postalCode": "040441",
+    "addressCountry": "RO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.4217,
+    "longitude": 26.1109
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    }
+  ],
+  "medicalSpecialty": [
+    "Radiography",
+    "Orthopedic",
+    "Cardiovascular",
+    "Dermatologic",
+    "Rheumatologic",
+    "PlasticSurgery"
+  ],
+  "priceRange": "$$",
+  "description":
+    "Clinică medicală multidisciplinară în București, cu servicii de radiologie digitală, ortopedie, cardiologie, dermatologie, reumatologie și chirurgie plastică."
+};
+
 
 export default function RootLayout({
   children,
@@ -49,12 +117,16 @@ export default function RootLayout({
       <body
         className={`
           ${raleway.variable}
-          antialiased 
-          bg-[oklch(0.98_0.01_260)] 
+          antialiased
+          bg-[oklch(0.98_0.01_260)]
           dark:bg-[oklch(0.12_0.02_260)]
           font-sans
         `}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
         <ThemeProvider
           attribute="class"
