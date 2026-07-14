@@ -34,10 +34,10 @@ const prices = {
     { name: 'Consult ortopedie - medic primar', price: '300 RON' },
     { name: 'Consult ortopedie - medic specialist', price: '250 RON' },
     { name: 'Control ortopedie', price: '200 RON' },
-    { name: 'Infiltrație intraarticulară acid hialuronic / corticosteroid', price: '300 RON + substanță' },
+    { name: 'Infiltrație intraarticulară acid hialuronic / corticosteroid', price: '300 RON', extra: 'substanță' },
     { name: 'Infiltrație PRP', price: '800 RON' },
     { name: 'Infiltrație Sanakin', price: '1200 RON' },
-    { name: 'Infiltrație șold eco ghidată', price: '500 RON + substanță' },
+    { name: 'Infiltrație șold eco ghidată', price: '500 RON', extra: 'substanță' },
     { name: 'Infiltrație coloană eco ghidată', price: '500 RON' },
     { name: 'Imobilizare gipsată', price: '300 RON' },
     { name: 'Tratament intravenos', price: '150 RON' },
@@ -124,6 +124,7 @@ export default function PreturiPage() {
                 hover:bg-[oklch(0.92_0.03_250)] 
                 transition-colors 
                 border border-[oklch(0.92_0.02_250)]
+                flex items-center justify-center
                 text-center
                 block
               "
@@ -142,7 +143,14 @@ export default function PreturiPage() {
             {prices.ortopedie.map((item, i) => (
               <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
                 <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                <span className="font-semibold text-[oklch(0.25_0.02_260)]">{item.price}</span>
+                <span className="font-semibold text-[oklch(0.25_0.02_260)] flex flex-col items-end">
+                <span>{item.price}</span>
+                {item.extra && (
+                  <span className="mt-1 px-2 py-0.5 rounded-full bg-[oklch(0.96_0.02_250)] text-[oklch(0.35_0.05_260)] text-xs font-medium">
+                    + {item.extra}
+                  </span>
+                )}
+              </span>           
               </div>
             ))}
           </div>
