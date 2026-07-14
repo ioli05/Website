@@ -47,7 +47,7 @@ export async function POST(request: Request) {
     const resend = new Resend(resendApiKey);
 
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Ortho X-Ray Clinic <no-reply@orthoxray.ro>',
+      from: 'Ortho X-Ray Clinic <contact@orthoxray.ro>',
       to: ['contact@orthoxray.ro'],
       subject: `Programare nouă de la ${data.name}`,
       html: `
