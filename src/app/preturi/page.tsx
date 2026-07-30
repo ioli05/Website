@@ -7,12 +7,22 @@ export const metadata: Metadata = {
   description:
     "Lista completă de prețuri pentru radiologie digitală, ecografie, ortopedie, cardiologie, dermatologie, reumatologie și chirurgie plastică la Ortho X-Ray Clinic București.",
   keywords: [
-    "prețuri radiologie",
+    "radiologie",
     "pret radiografie",
     "tarife consultații medicale",
     "preț ortopedie",
-    "preț cardiologie",
-    "clinică medicală București"
+    "clinică medicală București",
+    "infiltratii",
+    "Sanakin",
+    "Ortholeg",
+    "Orthospine",
+    "PRP",
+    "infiltratie coloana",
+    "imobilizare",
+    "punctie articulara",
+    "infiltratie ghidata",
+    "corticosteroid",
+    "Infiltrație intraarticulară"
   ],
   alternates: {
     canonical: "/preturi",
@@ -22,11 +32,11 @@ export const metadata: Metadata = {
 
 const categories = [
   { id: 'ortopedie', name: 'Ortopedie' },
-  { id: 'cardiologie', name: 'Cardiologie' },
+  //{ id: 'cardiologie', name: 'Cardiologie' },
   { id: 'radiologie', name: 'Radiologie' },
-  { id: 'reumatologie', name: 'Reumatologie' },
-  { id: 'plastica', name: 'Chirurgie Plastică' },
-  { id: 'dermatologie', name: 'Dermatologie' },
+  // { id: 'reumatologie', name: 'Reumatologie' },
+  // { id: 'plastica', name: 'Chirurgie Plastică' },
+  // { id: 'dermatologie', name: 'Dermatologie' },
 ];
 
 const prices = {
@@ -59,7 +69,7 @@ const prices = {
   radiologie: [
     { name: 'Radiografie membre - 1 incidență', price: '100 RON' },
     { name: 'Radiografie membre - 2 incidențe', price: '150 RON' },
-    { name: 'Radiografie membre - 3 incidențe', price: '300 RON' },
+    { name: 'Radiografie membre - 3 incidențe', price: '250 RON' },
     { name: 'Radiografie OrthoLeg / OrthoSpine', price: '450 RON' },
     // { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
     // { name: 'CT segmentar', price: '350 - 450 RON' },
@@ -141,18 +151,32 @@ export default function PreturiPage() {
           </h3>
           <div className="space-y-3">
             {prices.ortopedie.map((item, i) => (
-              <div key={i} className="flex justify-between items-center py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0">
-                <span className="text-[oklch(0.35_0.05_260)]">{item.name}</span>
-                <span className="font-semibold text-[oklch(0.25_0.02_260)] flex flex-col items-end">
-                <span>{item.price}</span>
+            <div
+              key={i}
+              className="flex justify-between items-start py-3 border-b border-[oklch(0.92_0.02_250)] last:border-0"
+            >
+              {/* Numele procedurii */}
+              <span className="text-[oklch(0.35_0.05_260)] leading-tight">
+                {item.name}
+              </span>
+
+              {/* Preț + extra */}
+              <span className="flex flex-col items-end">
+                {/* Preț pe prima linie */}
+                <span className="font-semibold text-[oklch(0.25_0.02_260)] whitespace-nowrap">
+                  {item.price}
+                </span>
+
+                {/* Extra pe linia de sub */}
                 {item.extra && (
                   <span className="mt-1 px-2 py-0.5 rounded-full bg-[oklch(0.96_0.02_250)] text-[oklch(0.35_0.05_260)] text-xs font-medium">
                     + {item.extra}
                   </span>
                 )}
-              </span>           
-              </div>
-            ))}
+              </span>
+            </div>
+          ))}
+
           </div>
         </div>
 

@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Activity, Heart, Bone, Stethoscope, Microscope, CheckCircle, Loader2, ChevronLeft, ChevronRight, ScanFace, Syringe, } from 'lucide-react';
+import { ArrowRight, Activity, Heart, Bone, Stethoscope, Microscope, CheckCircle, Loader2, ChevronLeft, ChevronRight, ScanFace, Syringe, Star, } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -25,8 +25,8 @@ const specialties = [
 ];
 
 const teamMembers = [
-  { name: 'Dr. Zubaci Radu', specialty: 'Medic Primar Ortopedie', image: 'male_icon.png' },
-  { name: 'Dr. Nitan Ovidiu', specialty: 'Medic Specialist Ortopedie', image: 'male_icon.png' },
+  { name: 'Dr. Zubaci Radu', specialty: 'Medic Primar Ortopedie', image: 'dr_zubaci.jpg' },
+  { name: 'Dr. Nitan Ovidiu', specialty: 'Medic Specialist Ortopedie', image: 'dr_nitan.jpg' },
   { name: 'Dr. Bodale Laura', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
 //  { name: 'Dr. Popescu Maria', specialty: 'Medic Specialist Radiologie', image: 'female_icon.png' },
 //  { name: 'Dr. Ionescu Andrei', specialty: 'Medic specialist Reumatologie', image: 'male_icon.png' },
