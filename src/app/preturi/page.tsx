@@ -68,8 +68,8 @@ const prices = {
 
   radiologie: [
     { name: 'Radiografie membre - 1 incidență', price: '100 RON' },
-    { name: 'Radiografie membre - 2 incidențe', price: '150 RON' },
-    { name: 'Radiografie membre - 3 incidențe', price: '250 RON' },
+    { name: 'Radiografie membre - 2 incidențe', price: '160 RON' },
+    { name: 'Radiografie membre - 3 incidențe', price: '200 RON' },
     { name: 'Radiografie OrthoLeg / OrthoSpine', price: '450 RON' },
     // { name: 'Radiografie membru inferior', price: '90 - 110 RON' },
     // { name: 'CT segmentar', price: '350 - 450 RON' },
