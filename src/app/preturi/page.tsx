@@ -46,6 +46,8 @@ const prices = {
     { name: 'Control ortopedie', price: '200 RON' },
     { name: 'Infiltrație intraarticulară acid hialuronic / corticosteroid', price: '300 RON', extra: 'substanță' },
     { name: 'Infiltrație PRP', price: '800 RON' },
+    { name: 'Infiltrație PRP - hy tissue prp 20', price: '1000 RON' },
+    { name: 'Infiltrație PRP - hy tissue prp 50', price: '1500 RON' },
     { name: 'Infiltrație Sanakin', price: '1200 RON' },
     { name: 'Infiltrație șold eco ghidată', price: '500 RON', extra: 'substanță' },
     { name: 'Infiltrație coloană eco ghidată', price: '500 RON' },
