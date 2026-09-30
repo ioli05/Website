@@ -58,6 +58,7 @@ const prices = {
     { name: 'Îndepărtare atelă gipsată', price: '100 RON' },
     { name: 'Puncție articulară', price: '200 RON' },
     { name: 'Reducere închisă fracturi / luxații și imobilizare', price: '500 RON' },
+    { name: 'Laser panou roșu + infraroșu', price: '120 RON', extra: '30 minute'},
   ],
 
 //   cardiologie: [
